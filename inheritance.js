@@ -1,3 +1,4 @@
+// Super class
 class Person {
 
   constructor(name, quirkyFact) {
@@ -11,12 +12,15 @@ class Person {
     
   }
 
-
+// Sub classes
 class Student extends Person {
   enroll(cohort) {
     this.cohort = cohort;
   }
 
+  bio() {
+    return `I'm a student at LHL. ${super.bio()}`;
+  }
 }
 
 class Mentor extends Person {
@@ -28,11 +32,14 @@ class Mentor extends Person {
     this.offShift = false;
   }
 
+  bio() {
+    return `I'm a mentor at LHL. ${super.bio()}`;
+  }
+
  } 
 
- let student1 = new Student('Anit', 'nothing really');
- console.log(student1.enroll);
+ let anit = new Student('Anit', 'nothing really');
+ console.log(anit.bio());
 
- let mentor1 = new Mentor('Dan', 'Will carry u in life');
- console.log(mentor1.goOnShift);
- 
+ let dan = new Mentor('Dan', 'Will carry u in life');
+ console.log(dan.bio());
